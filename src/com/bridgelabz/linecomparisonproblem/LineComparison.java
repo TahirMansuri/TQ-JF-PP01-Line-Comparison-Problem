@@ -10,8 +10,7 @@ public class LineComparison {
     Scanner sc = new Scanner(System.in);
 
     //Method to Get Input from User
-    public void getLinePoint()
-    {
+    public void getLinePoint() {
         System.out.println("Enter The Value of X1 :");
         x1=sc.nextInt();
 
@@ -27,17 +26,32 @@ public class LineComparison {
     }
 
     //Method to Calculate Length of Line
-    public double getLengthOfLine()
-    {
+    public double getLengthOfLine() {
         double lengthofLine = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
         return lengthofLine;
     }
-
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
         //Object of LineComaprison Class for Calculating Length of Lines
-        LineComparison LC = new LineComparison();
-        LC.getLinePoint();
-        System.out.println("Length of Lines : "+LC.getLengthOfLine());
+        LineComparison LC1 = new LineComparison();
+        LineComparison LC2 = new LineComparison();
+
+        //Getting Line Point from User Input
+        LC1.getLinePoint();
+        LC2.getLinePoint();
+
+        //Getting Length of Lines in Variables
+        double line1Length = LC1.getLengthOfLine();
+        double line2Length = LC2.getLengthOfLine();
+
+        System.out.println("Length of Line1 : "+line1Length);
+        System.out.println("Length of Line2 : "+line2Length);
+
+        //Checking the Equality of Lines
+        if( line1Length == line2Length ) {
+            System.out.println("Line1 and Line2 are Equal");
+        } else {
+            System.out.println("Line1 and Line2 are Not Equal");
+        }
     }
 }
